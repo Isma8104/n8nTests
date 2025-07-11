@@ -7,32 +7,35 @@ services:
       url: docker.io/n8nio/n8n:latest
 
     envVars:
-      - key: N8N_ENCRYPTION_KEY
-        generateValue: true
+  - key: N8N_ENCRYPTION_KEY
+    generateValue: true
 
-      - key: N8N_BASIC_AUTH_ACTIVE
-        value: "true"
-      - key: N8N_BASIC_AUTH_USER
-        value: "admin"
-      - key: N8N_BASIC_AUTH_PASSWORD
-        value: "una_clave_segura"
+  - key: N8N_BASIC_AUTH_ACTIVE
+    value: "true"
+  - key: N8N_BASIC_AUTH_USER
+    value: "admin"
+  - key: N8N_BASIC_AUTH_PASSWORD
+    value: "una_clave_segura"
 
-      - key: N8N_HOST
-        value: n8n.onrender.com
-      - key: WEBHOOK_URL
-        value: https://n8n.onrender.com
+  - key: N8N_HOST
+    value: n8n.onrender.com
+  - key: WEBHOOK_URL
+    value: https://n8n.onrender.com
 
-      - key: DB_TYPE
-        value: postgresdb
-      - key: DB_POSTGRESDB_HOST
-        value: ep-curly-poetry-a8a6ki4z-pooler.eastus2.azure.neon.tech
-      - key: DB_POSTGRESDB_PORT
-        value: "5432"
-      - key: DB_POSTGRESDB_DATABASE
-        value: neondb
-      - key: DB_POSTGRESDB_USER
-        value: neondb_owner
-      - key: DB_POSTGRESDB_PASSWORD
-        value: npg_rR21zNskKajC
-      - key: DB_POSTGRESDB_SCHEMA
-        value: public
+  # Base de datos Neon
+  - key: DB_TYPE
+    value: postgresdb
+  - key: DB_POSTGRESDB_HOST
+    value: ep-curly-poetry-a8a6ki4z-pooler.eastus2.azure.neon.tech
+  - key: DB_POSTGRESDB_PORT
+    value: "5432"
+  - key: DB_POSTGRESDB_DATABASE
+    value: neondb
+  - key: DB_POSTGRESDB_USER
+    value: neondb_owner
+  - key: DB_POSTGRESDB_PASSWORD
+    value: npg_rR21zNskKajC
+  - key: DB_POSTGRESDB_SCHEMA
+    value: public
+  - key: DB_POSTGRESDB_SSL_REJECT_UNAUTHORIZED
+    value: "false"      # <‑‑ LÍNEA CLAVE
